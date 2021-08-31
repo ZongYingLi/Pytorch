@@ -4,16 +4,17 @@ import torchvision.datasets as dsets
 import torchvision.transforms as transforms
 import matplotlib.pyplot as plt
 
+# LSTM是为了解决普通RNN循环神经网络中梯度消失和梯度爆炸的问题
 
 # torch.manual_seed(1)    # reproducible
 
 # Hyper Parameters
 EPOCH = 1               # train the training data n times, to save time, we just train 1 epoch
-BATCH_SIZE = 64
+BATCH_SIZE = 64         # 批训练的次数
 TIME_STEP = 28          # rnn time step / image height
-INPUT_SIZE = 28         # rnn input size / image width
+INPUT_SIZE = 28         # rnn input size / image width ，图片是28*28的长*宽
 LR = 0.01               # learning rate
-DOWNLOAD_MNIST = True   # set to True if haven't download the data
+DOWNLOAD_MNIST = False   # 前面在CNN已经下载好了数据集，所以这里不用重复下载
 
 
 # Mnist digital dataset
