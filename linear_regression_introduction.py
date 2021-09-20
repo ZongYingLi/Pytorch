@@ -84,9 +84,7 @@ for epoch in range(num_epochs):
     if (epoch + 1) % 20 == 0:
         print('Epoch[{}/{}], loss: {:.6f}'.format(epoch + 1,num_epochs, loss.item()))
         # 报错 invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number
-        # print('Epoch[{}/{}], loss: {:.6f}'.format(epoch + 1,num_epochs, loss.item()))
-        # 由于以上报错，把loss.data[0]改为loss.item()[0]
-        # 报错'builtin_function_or_method' object is not subscriptable
+        # 由于以上报错，把loss.data[0]改为loss.item()
 
 # loss.data[0]中，首先loss是一个variable，所以通过loss.data可以取出一个tensor
 # 再通过loss.data[0]得到一个int或者float型的数据，这样我们才可以打印出相应的数据
