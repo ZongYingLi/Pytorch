@@ -13,6 +13,9 @@ import matplotlib.pyplot as plt
 import os
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'TRUE'
 
+# 遇到一个报错Expected all tensors to be on the same device, but found at least two devices, cuda:0 and cpu! (when checking arugment for argument mat1 in method wrapper_addmm)
+# 报错的本意就是：希望所有的tensor都在同一个设备上，而不是一会cpu，一会儿gpu
+
 # array是数组类型数据
 x_train=np.array([[3.3],[4.4],[5.5],[6.71],[6.93],[4.168],[9.779],[6.182],[7.59],[2.167],[7.042],[10.791]
                   ,[5.313],[7.997],[3.1]],dtype = np.float32)
@@ -79,9 +82,9 @@ for epoch in range(num_epochs):
     optimizer.step()           # 更新参数
 
     if (epoch + 1) % 20 == 0:
-        print('Epoch[{}/{}], loss: {:.6f}'.format(epoch + 1,num_epochs, loss.item()[0]))
+        print('Epoch[{}/{}], loss: {:.6f}'.format(epoch + 1,num_epochs, loss.item()))
         # 报错 invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number
-        # print('Epoch[{}/{}], loss: {:.6f}'.format(epoch + 1,num_epochs, loss.item()[0]))
+        # print('Epoch[{}/{}], loss: {:.6f}'.format(epoch + 1,num_epochs, loss.item()))
         # 由于以上报错，把loss.data[0]改为loss.item()[0]
         # 报错'builtin_function_or_method' object is not subscriptable
 
