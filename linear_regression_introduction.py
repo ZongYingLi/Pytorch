@@ -24,12 +24,14 @@ y_train=np.array([[1.7],[2.76],[2.09],[3.19],[1.694],[1.573],[3.366],[2.596],[2.
 
 # 通过matplotlib画出散点图
 
-# plt.scatter(x_train,y_train)
+
+# plt.scatter(x_train,y_train)        # matplotlib中的scatter绘制散点，plot绘制经过点的曲线
 # plt.show()
 
 
 # 找一条直线去逼近这些点，希望这条直线距离这些点的距离之和最小
 # 先将numpy.array转换为tensor，因为Pytorch里面的处理单元是tensor
+
 x_train=torch.from_numpy(x_train)
 y_train=torch.from_numpy(y_train)
 
