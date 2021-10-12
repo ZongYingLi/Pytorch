@@ -84,7 +84,7 @@ while True:
     optimizer.step()
     epoch+=1
     if epoch % 100 == 0:
-        print('epoch : {}  loss : {}'.format(epoch, print_loss))
+        print('epoch : {}loss : {}'.format(epoch, print_loss))
     if print_loss<1e-3:     # 我们希望模型能够不断优化，知道我们设立的条件，取出的32个点的均方误差能够小于0.001
         break
 

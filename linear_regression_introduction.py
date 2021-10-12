@@ -96,7 +96,7 @@ model.eval()        # 首先将模型变成测试模型，这是因为有些层�
 # 比如Dropout和BatchNormalization在训练和测试的时候是不一样的，所以我们需要这样一个操作来转换这些不一样的层操作
 predict = model(Variable(x_train))
 predict = predict.data.numpy()
-plt.plot(x_train.numpy(),y_train.numpy() , 'ro' , label='Original data')
+plt.plot(x_train.numpy(),y_train.numpy(),'ro', label='Original data')
 plt.plot(x_train.numpy(),predict,label='Fitting Line')
 
 plt.legend()
